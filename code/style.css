@@ -1,0 +1,273 @@
+:root {
+  --bg-color: #f4f4f4;
+  --text-color: #333;
+  --accent-color: #2c3e50;
+  --link-color: #2980b9;
+  --card-bg: #fff;
+}
+
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #f4f4f4;
+  --accent-color: #00bcd4;
+  --link-color: #90caf9;
+  --card-bg: #1e1e1e;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--bg-color);
+  color: var(--text-color);
+  scroll-behavior: smooth;
+  transition: background 0.3s, color 0.3s;
+}
+
+header {
+  background: var(--accent-color);
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+section {
+  padding: 30px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 {
+  color: var(--accent-color);
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+  margin-top: 40px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.skills-grid div {
+  background: var(--card-bg);
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.skills-grid div i {
+  font-size: 1.2em;
+  margin-right: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+i {
+  margin-right: 10px;
+  transition: transform 0.2s ease;
+}
+
+li:hover i {
+  transform: scale(1.2);
+  color: var(--link-color);
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+/* ...existing code... */
+.project-gallery {
+  display: grid;
+  grid-template-columns: 1fr; /* Only one column */
+  gap: 22px;
+  margin: 20px 0 30px 0;
+}
+/* ...existing code... */
+
+.project-card {
+  background: var(--card-bg);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+  text-align: center;
+}
+
+.project-card:hover {
+  transform: scale(1.02);
+}
+
+.project-card i {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: var(--accent-color);
+}
+
+.dark-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.resume-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: var(--accent-color);
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+form {
+  margin-top: 20px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: var(--card-bg);
+  color: var(--text-color);
+}
+
+button[type="submit"] {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--accent-color);
+  color: white;
+}
+/* 🎨 Skill-specific colors */
+.skills-grid .python {
+  background: linear-gradient(90deg, #3776AB, #FFD43B); /* Python blue-yellow */
+  color: #fff;
+}
+.skills-grid .sql {
+  background: linear-gradient(90deg, #003B57, #00758F); /* SQL dark blue */
+  color: #fff;
+}
+.skills-grid .r {
+  background: linear-gradient(90deg, #276DC3, #75AADB); /* R blue shades */
+  color: #fff;
+}
+.skills-grid .excel {
+  background: linear-gradient(90deg, #217346, #34A853); /* Excel green */
+  color: #fff;
+}
+.skills-grid .git {
+  background: linear-gradient(90deg, #F1502F, #DD4C35); /* Git orange-red */
+  color: #fff;
+}
+.skills-grid .jupyter {
+  background: linear-gradient(90deg, #F37726, #FFB84D); /* Jupyter orange */
+  color: #fff;
+}
+.skills-grid .ml {
+  background: linear-gradient(90deg, #6A1B9A, #9C27B0); /* ML purple */
+  color: #fff;
+}
+.skills-grid .ts {
+  background: linear-gradient(90deg, #1E3A8A, #3B82F6); /* Time series blue */
+  color: #fff;
+}
+.skills-grid .nlp {
+  background: linear-gradient(90deg, #008080, #20B2AA); /* NLP teal */
+  color: #fff;
+}
+.skills-grid .viz {
+  background: linear-gradient(90deg, #E97627, #F2C811); /* Tableau orange + PowerBI yellow */
+  color: #fff;
+}
+.skills-grid .workflow {
+  background: linear-gradient(90deg, #4CAF50, #81C784); /* Workflow green shades */
+  color: #fff;
+}
+/* Default icons size */
+.skills-grid i {
+  font-size: 1.2rem;
+}
+
+/* Softer skill box backgrounds */
+.python { background: #fdf6e3; }       /* light cream */
+.sql { background: #e6f0fa; }          /* light blue */
+.r { background: #e8f2ff; }            /* soft blue */
+.excel { background: #e6f9ec; }        /* light green */
+.git { background: #fff0eb; }          /* soft orange */
+.jupyter { background: #fff5e6; }      /* soft orange */
+.ml { background: #f3e6f9; }           /* light purple */
+.ts { background: #e6ecff; }           /* soft blue */
+.nlp { background: #e6f9f8; }          /* soft teal */
+.viz { background: #fff8e6; }          /* light yellow/orange */
+.workflow { background: #eaf7ea; }     /* soft green */
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns per row */
+  gap: 22px;
+  margin: 20px 0 30px 0;
+}
+
+@media (max-width: 1200px) {
+  .project-gallery {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for medium screens */
+  }
+}
+
+@media (max-width: 900px) {
+  .project-gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for small screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .project-gallery {
+    grid-template-columns: 1fr; /* 1 column for mobile */
+  }
+}
+
+/* Fix project card hover in dark mode */
+body.dark-mode .project-card:hover {
+  background: #232946 !important;
+  color: #fff !important;
+}
+
+body.dark-mode .project-card:hover h3,
+body.dark-mode .project-card:hover p,
+body.dark-mode .project-card:hover strong,
+body.dark-mode .project-card:hover i {
+  color: #fff !important;
+}
+

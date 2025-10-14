@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Subhash Kadiyam | Data Analyst Portfolio</title>
+  <meta name="description" content="Portfolio of Subhash Kadiyam, Data Analyst & ML Engineer. Explore skills, projects, certifications, and contact info.">
+  <meta name="keywords" content="Data Analyst, Machine Learning, Python, SQL, Tableau, Power BI, Subhash Kadiyam">
+  <meta name="author" content="Subhash Kadiyam">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #eaf2ff 0%, #c7d2fe 50%, #f5f7fa 100%);
+      color: #222;
+      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      transition: background 0.3s, color 0.3s;
+    }
+    .dark-mode {
+      background: linear-gradient(135deg, #181818 0%, #232946 100%);
+      color: #f1f1f1;
+    }
+    .dark-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 100;
+      cursor: pointer;
+      background: #222;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      padding: 10px 14px;
+      font-size: 1.2em;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    .dark-toggle:hover {
+      background: #444;
+      box-shadow: 0 4px 16px #4e8cff44;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 40px 5vw 20px 5vw;
+      gap: 40px;
+      animation: fadeInDown 1s;
+      background: rgba(255,255,255,0.7);
+      border-radius: 0 0 32px 32px;
+      box-shadow: 0 2px 16px rgba(78,140,255,0.07);
+    }
+    .profile-details {
+      flex: 1;
+      min-width: 260px;
+    }
+    .profile-details h1 {
+      font-size: 2.4em;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #2563eb;
+      letter-spacing: 1px;
+    }
+    .profile-details p {
+      font-size: 1.08em;
+      margin: 6px 0;
+    }
+    .profile-details a {
+      color: #2563eb;
+      font-weight: 500;
+      text-decoration: none;
+      margin-right: 10px;
+      transition: color 0.3s;
+    }
+    .profile-details a:hover {
+      color: #4e8cff;
+      text-decoration: underline;
+    }
+    .resume-button {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 10px 22px;
+      background: linear-gradient(90deg, #4e8cff 60%, #2563eb 100%);
+      color: #fff;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.08em;
+      box-shadow: 0 2px 8px rgba(78,140,255,0.12);
+      transition: background 0.3s, transform 0.3s;
+    }
+    .resume-button:hover {
+      background: linear-gradient(90deg, #2563eb 60%, #4e8cff 100%);
+      transform: scale(1.07);
+    }
+    .profile-image {
+      flex: 0 0 180px;
+      text-align: center;
+    }
+    .profile-image img {
+      width: 170px;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid #4e8cff;
+      box-shadow: 0 6px 24px rgba(78,140,255,0.18);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .profile-image img:hover {
+      transform: scale(1.09) rotate(-2deg);
+      box-shadow: 0 12px 32px #2563eb44;
+    }
+    section {
+      animation: fadeInUp 1.2s;
+      padding: 32px 5vw 0 5vw;
+      max-width: 1200px;
+      margin: auto;
+    }
+    h2 {
+      color: #2563eb;
+      font-size: 1.5em;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 18px;
+      margin: 18px 0 30px 0;
+    }
+    .skills-grid div {
+      background: linear-gradient(90deg, #f5f7fa 80%, #eaf2ff 100%);
+      border-radius: 12px;
+      padding: 14px 10px;
+      font-size: 1.08em;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      transition: box-shadow 0.3s, transform 0.3s, background 0.3s;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .skills-grid div:hover {
+      box-shadow: 0 4px 16px #4e8cff44;
+      transform: translateY(-4px) scale(1.04);
+      background: linear-gradient(90deg, #eaf2ff 80%, #c7d2fe 100%);
+    }
+    .skills-grid i {
+      font-size: 1.5em;
+      color: #2563eb;
+      transition: color 0.3s;
+    }
+    .skills-grid div:hover {
+      background: #fff;
+      color: #000; /* make text black */
+    }
+
+    .skills-grid div:hover i {
+      color: #000 !important; /* override icon color */
+    }
+
+    ul {
+      padding-left: 18px;
+    }
+    ul li {
+      margin-bottom: 8px;
+      font-size: 1.08em;
+      font-weight: 500;
+    }
+    ul i {
+      color: #2563eb;
+      margin-right: 8px;
+    }
+    .project-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+      margin: 20px 0 30px 0;
+    }
+    .project-card {
+      background: linear-gradient(90deg, #f5f7fa 80%, #eaf2ff 100%);
+      border-radius: 14px;
+      padding: 18px 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      transition: box-shadow 0.3s, transform 0.3s, background 0.3s;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      min-height: 230px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .project-card:hover {
+      box-shadow: 0 6px 24px #4e8cff33;
+      transform: translateY(-6px) scale(1.04);
+      background: linear-gradient(90deg, #eaf2ff 80%, #c7d2fe 100%);
+    }
+    .project-card i {
+      font-size: 2.2em;
+      color: #4e8cff;
+      margin-bottom: 8px;
+      display: block;
+      transition: color 0.3s;
+    }
+    .project-card:hover i {
+      color: #2563eb;
+    }
+    .project-image {
+      width: 100%;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
+    }
+    .project-card:hover .project-image {
+      transform: scale(1.05);
+    }
+    .project-card h3 {
+      margin: 0 0 6px 0;
+      color: #2563eb;
+      font-size: 1.15em;
+      font-weight: 600;
+    }
+    .project-card p {
+      margin: 0 0 6px 0;
+      font-size: 1em;
+    }
+    form {
+      margin-top: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 400px;
+      animation: fadeInUp 1.5s;
+      background: rgba(255,255,255,0.7);
+      padding: 18px 16px;
+      border-radius: 14px;
+      box-shadow: 0 2px 8px rgba(78,140,255,0.07);
+    }
+    label {
+      font-weight: 500;
+      color: #2563eb;
+    }
+    input, textarea {
+      border-radius: 8px;
+      border: 1px solid #cfd8dc;
+      padding: 8px;
+      font-size: 1em;
+      transition: border 0.3s;
+      background: #f5f7fa;
+    }
+    input:focus, textarea:focus {
+      border: 1.5px solid #4e8cff;
+      outline: none;
+      background: #eaf2ff;
+    }
+    button[type="submit"] {
+      background: linear-gradient(90deg, #4e8cff 60%, #2563eb 100%);
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 18px;
+      font-size: 1em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+      box-shadow: 0 2px 8px rgba(78,140,255,0.12);
+    }
+    button[type="submit"]:hover {
+      background: linear-gradient(90deg, #2563eb 60%, #4e8cff 100%);
+      transform: scale(1.04);
+    }
+    footer {
+      text-align: center;
+      margin: 40px 0 10px 0;
+      font-size: 1em;
+      color: #888;
+      animation: fadeIn 2s;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeIn {
+      from { opacity: 0;}
+      to { opacity: 1;}
+    }
+    @media (max-width: 900px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 32px 3vw 16px 3vw;
+      }
+      section {
+        padding: 24px 3vw 0 3vw;
+      }
+    }
+    @media (max-width: 600px) {
+      .profile-image img {
+        width: 120px;
+        height: 120px;
+      }
+      .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      }
+      .project-gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<button class="dark-toggle" onclick="toggleDarkMode()">🌙</button>
+
+<header>
+  <link rel="stylesheet" href="style.css">
+  <div class="profile-details">
+    <h1>Subhash Kadiyam</h1>
+    <h2>Data Analyst & Junior ML Engineer</h2>
+    <p>
+      <i class="fas fa-map-marker-alt"></i> Guntur, Andhra Pradesh<br>
+      <i class="fas fa-phone"></i> +91-7815920166<br>
+      <i class="fas fa-envelope"></i> subhashkadiyam233@gmail.com
+    </p>
+    <p>
+      <a href="https://github.com/SubbuTechie1" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://www.linkedin.com/in/subhash-kadiyam-156598307" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    </p>
+    <a class="resume-button" href="https://github.com/SubbuTechie1/Data_Analyst_Resume.git" download><i class="fas fa-download"></i> Download Resume</a>
+  </div>
+  <div class="profile-image">
+    <img src="profile.jpg" alt="Subhash Kadiyam Photo">
+    <!-- Replace profile.jpg with your actual image file -->
+  </div>
+</header>
+
+<section>
+  <p>Aspiring Data Scientist with strong foundations in Python, Machine Learning, SQL, and Data Visualization, along with hands-on
+experience through internships, certifications, and projects. Developed and implemented data-driven solutions by analyzing complex
+datasets to identify key insights and drive informed business decisions. Seeking opportunities to apply analytical and programming
+expertise to solve real-world problems</p>
+
+  <h2>Skills</h2>
+<h2>Skills</h2>
+<div class="skills-grid">
+  <div class="python"><i class="fab fa-python"></i> Python</div>
+  <div class="sql"><i class="fas fa-database"></i> SQL / MySQL / PostgreSQL</div>
+  <div class="r"><i class="fab fa-r-project"></i> R (Basics)</div>
+  <div class="excel"><i class="fas fa-file-excel"></i> Excel (Advanced)</div>
+  <div class="git"><i class="fab fa-git-alt"></i> Git</div>
+  <div class="jupyter"><i class="fas fa-laptop-code"></i> Jupyter / Colab</div>
+  <div class="ml"><i class="fas fa-brain"></i> Machine Learning / Deep Learning</div>
+  <div class="ts"><i class="fas fa-chart-line"></i> Time Series Forecasting</div>
+  <div class="nlp"><i class="fas fa-language"></i> NLP</div>
+  <div class="viz"><i class="fas fa-chart-bar"></i> Tableau / Power BI</div>
+  <div class="workflow"><i class="fas fa-project-diagram"></i> Data Workflow</div>
+</div>
+
+
+  <h2>Certifications & Internships</h2>
+  <ul>
+    <li><i class="fas fa-certificate"></i> Data Analysis — Analytics Vidhya</li>
+    <li><i class="fas fa-certificate"></i> ML Internship — SkillDzire (May 2025)</li>
+    <li><i class="fas fa-certificate"></i> AI/ML — APSSDC with IBM SkillsBuild</li>
+    <li><i class="fas fa-certificate"></i> Cybersecurity & Python Full Stack — Technook</li>
+  </ul>
+
+    <h2>Projects</h2>
+    <div class="project-gallery">
+      <a href="https://github.com/SubbuTechie1/Subhash-Portfolio/blob/main/EmployeeBurnout.ipynb" target="_blank" class="project-link">
+        <div class="project-card">
+          <img class="project-image" src="burnout.jpg" alt="Employee Burnout Prediction">
+          <i class="fas fa-user-clock"></i>
+          <h3>Employee Burnout Prediction</h3>
+          <p>Classification model using logistic regression and decision trees.</p>
+          <p><strong>Tools:</strong> Python, scikit-learn, Pandas</p>
+        </div>
+      </a>
+      <div class="project-card">
+        <img class="project-image" src="traffic_sign.jpg" alt="Traffic Sign Classification">
+        <i class="fas fa-traffic-light"></i>
+        <h3>Traffic Sign Classification</h3>
+        <p>CNN model to classify traffic signs from images.</p>
+        <p><strong>Tools:</strong> TensorFlow, Keras, OpenCV</p>
+      </div>
+      <div class="project-card">
+        <img class="project-image" src="voice.jpg" alt="Gender Recognition Using Voice">
+        <i class="fas fa-microphone-alt"></i>
+        <h3>Gender Recognition Using Voice</h3>
+        <p>Used audio features to train ML models that classify gender from speech samples.</p>
+        <p><strong>Tools:</strong> Librosa, SVM, Random Forest</p>
+      </div>
+      <div class="project-card">
+        <img class="project-image" src="weather.jpg" alt="Weather Forecasting">
+        <i class="fas fa-cloud-sun-rain"></i>
+        <h3>Weather Forecasting</h3>
+        <p>Implemented time series models to forecast weather patterns using historical data.</p>
+        <p><strong>Tools:</strong> Python, ARIMA, Matplotlib</p>
+      </div>
+      <div class="project-card">
+        <img class="project-image" src="dashboard.jpg" alt="Data Analysis Projects">
+        <i class="fas fa-chart-pie"></i>
+        <h3>Data Analysis Projects</h3>
+        <p>Performed exploratory data analysis and created dashboards for business insights.</p>
+        <p><strong>Tools:</strong> SQL, Tableau, Power BI</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Contact Me</h2>
+  <form action="mailto:subhashkadiyam233@gmail.com" method="post" enctype="text/plain">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2025 Subhash Kadiyam | Built with ❤️ and Python</p>
+</footer>
+
+<script>
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+  }
+</script>
+
+</body>
+</html>
