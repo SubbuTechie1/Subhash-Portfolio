@@ -259,15 +259,48 @@ footer {
 }
 
 /* Fix project card hover in dark mode */
+body.dark-mode .project-card,
 body.dark-mode .project-card:hover {
   background: #232946 !important;
   color: #fff !important;
 }
 
-body.dark-mode .project-card:hover h3,
-body.dark-mode .project-card:hover p,
-body.dark-mode .project-card:hover strong,
-body.dark-mode .project-card:hover i {
+body.dark-mode .project-card h3,
+body.dark-mode .project-card p,
+body.dark-mode .project-card strong,
+body.dark-mode .project-card i {
   color: #fff !important;
 }
+
+body.dark-mode .project-card .project-image,
+body.dark-mode .project-card:hover .project-image {
+  filter: brightness(0.85) contrast(1.1);
+}
+
+body.dark-mode form,
+body.dark-mode form:hover {
+  background: #232946 !important;
+  color: #fff !important;
+}
+
+body.dark-mode form label,
+body.dark-mode form input,
+body.dark-mode form textarea {
+  color: #fff !important;
+  background: #181818 !important;
+  border-color: #4e8cff !important;
+}
+
+body.dark-mode form input:focus,
+body.dark-mode form textarea:focus {
+  background: #232946 !important;
+  border-color: #90caf9 !important;
+}
+
+body.dark-mode button[type="submit"] {
+  background: linear-gradient(90deg, #4e8cff 60%, #2563eb 100%) !important;
+  color: #fff !important;
+}
+
+/* Remove duplicate/old dark-mode project-card:hover rule if present */
 
